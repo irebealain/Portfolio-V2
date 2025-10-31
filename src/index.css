@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS variables for theme shades matching the referenced portfolio */
+:root {
+  --color-bg: #0b0c0f;
+  --color-card: #0f1115;
+  --color-fg: #e5e7eb;
+  --color-muted: #9ca3af;
+  --color-accent: #22c55e;
+  /* emerald-500 */
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply antialiased bg-bg-dark text-fg selection:bg-accent selection:text-accent-fore;
+}
+
+/* Reusable utilities */
+.container-max {
+  @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+}
+
+.heading-xl {
+  @apply text-4xl tracking-tight font-display sm:text-5xl md:text-6xl;
+}
+
+.heading-xxl {
+  @apply font-semibold leading-none font-display;
+  font-size: clamp(3rem, 14vw, 8rem);
+}
+
+.heading-lg {
+  @apply text-3xl tracking-tight font-display sm:text-4xl;
+}
+
+.subtle {
+  @apply text-muted;
+}
+
+.card {
+  @apply border bg-card/80 backdrop-blur border-border rounded-2xl shadow-soft;
+}
+
+/* Marquee utility */
+@layer utilities {
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee-left {
+    animation: marquee-left 30s linear infinite;
+  }
+}
