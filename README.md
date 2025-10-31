@@ -2,8 +2,9 @@
 
 > A sleek and modern personal portfolio built with **React.js** and **GSAP**, featuring smooth animations and a minimal **dark & lime-green** design aesthetic.
 
-![Demo Screenshot](./screenshot.png)  
-*(Add a screenshot of your portfolio here!)*
+![Demo Screenshot] 
+<img width="944" height="429" alt="image" src="https://github.com/user-attachments/assets/39e7d251-99c1-47b0-ab22-cece8a535b12" />
+
 
 ---
 
