@@ -17,7 +17,7 @@ function App() {
               <span className="inline-flex w-2 h-2 rounded-full bg-accent"></span>
               <span className="tracking-wide">ALAIN IREBE</span>
             </NavLink>
-            {/* <Menu /> */}
+            <Menu />
           </nav>
         </header>
 

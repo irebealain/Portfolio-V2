@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Testimonials from '../components/Testimonials.jsx'
 import electionSystem from '../assets/ElectionDashboard.png'
+import alain from '../assets/alain.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -48,7 +49,7 @@ export default function Home() {
                 <div className="relative flex justify-center md:justify-end">
                     <div className="relative hero-portrait">
                         <div className="absolute rounded-full -inset-12 bg-emerald-500/20 blur-3xl"></div>
-                        <img className="relative z-10 w-[360px] h-[460px] object-cover rounded-2xl" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="Portrait" />
+                        <img className="relative z-10 w-[360px] h-[460px] object-cover rounded-2xl" src={alain} alt="Portrait" />
                     </div>
                 </div>
             </section>
