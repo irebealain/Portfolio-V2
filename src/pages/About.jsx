@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import portrait from '../assets/ASYVGraduation-202518052516th-May-2025_156.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -94,14 +95,18 @@ export default function About() {
                 scrollTrigger: { trigger: expRef.current, start: 'top 60%', end: 'bottom 40%', scrub: true },
             })
 
-            // Awards rows
-            gsap.from('.award-row', {
-                y: 18,
-                opacity: 0,
-                stagger: 0.06,
-                duration: 0.45,
-                ease: 'power2.out',
-                scrollTrigger: { trigger: '.awards-wrap', start: 'top 85%' },
+            // Awards cards individual animation
+            gsap.utils.toArray('.award-card').forEach((card, i) => {
+                gsap.from(card, {
+                    y: 18,
+                    opacity: 0,
+                    duration: 0.45,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%'
+                    },
+                })
             })
         }, rootRef)
         return () => ctx.revert()
@@ -110,32 +115,117 @@ export default function About() {
     // Code-like hero copy tokens for per-word animation
     const tokens = [
         { t: '<p>', className: 'text-accent font-mono' },
-        { t: 'I' },
-        { t: 'craft' },
-        { t: 'fast,' },
-        { t: 'scalable,' },
+        { t: 'Alain' },
+        { t: 'Irebe' },
+        { t: 'Gashumba' },
+        { t: 'is' },
+        { t: 'a' },
+        { t: 'passionate', highlight: true },
+        { t: 'Rwandan' },
+        { t: 'high' },
+        { t: 'school' },
+        { t: 'graduate' },
+        { t: 'from' },
+        { t: 'Agahozo-Shalom' },
+        { t: 'Youth' },
+        { t: 'Village,' },
+        { t: 'specializing' },
+        { t: 'in' },
+        { t: 'Mathematics,' },
+        { t: 'Physics,' },
+        { t: 'Computer', highlight: true },
+        { t: 'Science,' },
         { t: 'and' },
-        { t: 'user-friendly', highlight: true },
-        { t: 'web', highlight: true },
-        { t: 'applications' },
+        { t: 'Entrepreneurship.' },
+        { t: 'As' },
+        { t: 'founder' },
+        { t: 'of' },
+        { t: 'Byte', highlight: true },
+        { t: 'Builders,' },
+        { t: 'he' },
+        { t: 'taught' },
+        { t: 'coding' },
+        { t: 'to' },
+        { t: 'peers,' },
+        { t: 'organized' },
+        { t: 'hackathons,' },
+        { t: 'and' },
+        { t: 'built' },
+        { t: 'exchange' },
+        { t: 'programs.' },
+        { t: 'At' },
+        { t: 'Career' },
+        { t: 'Connect' },
+        { t: 'Hub,' },
+        { t: 'he' },
+        { t: 'connected' },
+        { t: '30+' },
+        { t: 'students' },
         { t: 'with' },
-        { t: 'modern' },
-        { t: 'JavaScript' },
-        { t: 'frameworks' },
-        { t: '—' },
-        { t: 'combining' },
-        { t: 'React' },
-        { t: 'on' },
-        { t: 'the' },
-        { t: 'frontend' },
+        { t: 'mentors' },
+        { t: 'and' },
+        { t: 'raised' },
+        { t: '1.5M' },
+        { t: 'FRW' },
+        { t: 'for' },
+        { t: 'ventures.' },
+        { t: 'Through' },
+        { t: 'internships' },
+        { t: 'at' },
+        { t: 'Africlouds,' },
+        { t: 'Growth' },
+        { t: 'Wave,' },
+        { t: 'and' },
+        { t: 'Academic' },
+        { t: 'Bridge,' },
+        { t: 'he' },
+        { t: 'developed', highlight: true },
+        { t: 'web' },
+        { t: 'applications,' },
+        { t: 'designed' },
+        { t: 'systems,' },
+        { t: 'and' },
+        { t: 'mentored' },
+        { t: 'teams.' },
+        { t: 'Winner' },
+        { t: 'of' },
+        { t: 'ASYV' },
+        { t: 'STEM' },
+        { t: 'Day' },
+        { t: '2024' },
+        { t: 'and' },
+        { t: 'runner-up' },
+        { t: 'in' },
+        { t: 'entrepreneurial' },
+        { t: 'challenges,' },
+        { t: 'Alain' },
+        { t: 'blends', highlight: true },
+        { t: 'technical' },
+        { t: 'expertise' },
         { t: 'with' },
-        { t: 'robust' },
-        { t: 'server-side', highlight: true },
-        { t: 'solutions', highlight: true },
+        { t: 'leadership' },
+        { t: 'and' },
+        { t: 'community' },
+        { t: 'impact.' },
+        { t: 'Fluent' },
+        { t: 'in' },
+        { t: 'four' },
+        { t: 'languages,' },
+        { t: 'he' },
+        { t: 'is' },
+        { t: 'driven' },
+        { t: 'by' },
+        { t: 'curiosity,' },
+        { t: 'creativity,' },
+        { t: 'and' },
         { t: 'using' },
-        { t: 'Node.js.' },
+        { t: 'technology', highlight: true },
+        { t: 'for' },
+        { t: 'social' },
+        { t: 'transformation.' },
         { t: '</p>', className: 'text-accent font-mono' },
     ]
+
 
     return (
         <div ref={rootRef} className="space-y-16">
@@ -144,7 +234,7 @@ export default function About() {
                 {/* Blurry tech logos background */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none about-logos">
                     <div className="grid grid-cols-3 gap-10 text-6xl font-black sm:grid-cols-6 opacity-10 blur-md">
-                        {['HTML', 'CSS', 'JS', 'REACT', 'NODE', 'EXPRESS', 'MONGO', 'PHP', 'LARAVEL'].map((k) => (
+                        {['REACT', 'NODE', 'EXPRESS', 'PYTHON', 'JAVA', 'FLUTTER', 'FIGMA', 'PHP', 'LARAVEL'].map((k) => (
                             <span key={k} className="tracking-tight">{k}</span>
                         ))}
                     </div>
@@ -154,7 +244,7 @@ export default function About() {
                 <div className="absolute w-40 h-40 rounded-full about-dot -top-8 -right-8 bg-emerald-500/30 blur-2xl" />
 
                 <h1 className="text-4xl font-semibold leading-tight text-center about-hero-title font-display sm:text-5xl md:text-6xl lg:text-7xl">
-                    I’M A FULL<br />STACK DEVELOPER
+                    I'M A FULL<br />STACK DEVELOPER
                 </h1>
 
                 {/* Portrait that moves over the title on scroll */}
@@ -163,7 +253,7 @@ export default function About() {
                         <div className="absolute -inset-6 rounded-2xl bg-emerald-400/10 blur-2xl" />
                         <img
                             className="about-portrait relative z-10 will-change-transform w-[280px] h-[320px] md:w-[380px] md:h-[420px] lg:w-[460px] lg:h-[500px] object-cover rounded-2xl shadow-2xl"
-                            src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop"
+                            src={portrait}
                             alt="About portrait"
                         />
                     </div>
@@ -174,7 +264,7 @@ export default function About() {
                     {tokens.map((tok, i) => (
                         <span
                             key={i}
-                            className={`about-word inline-block mr-2 ${tok.highlight ? 'text-accent' : ''} ${tok.className ? tok.className : ''}`}
+                            className={`about-word inline-block text-base leading-[0.5rem] mr-2 ${tok.highlight ? 'text-accent' : ''} ${tok.className ? tok.className : ''}`}
                         >
                             {tok.t}
                         </span>
@@ -187,9 +277,9 @@ export default function About() {
                 <div className="text-accent">// Technologies</div>
                 <div className="p-6 tech-grid card">
                     {[
-                        ['Frontend', ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS']],
-                        ['Server-side', ['Node.js', 'Express.js', 'MongoDB', 'PHP', 'Laravel']],
-                        ['Tools', ['Git', 'GitHub', 'AWS', 'Docker', 'Stack Overflow']],
+                        ['Frontend', ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS', 'Figma']],
+                        ['Backend & Mobile', ['Node.js', 'Express.js', 'PHP', 'Laravel', 'Python', 'Flutter', 'MongoDB']],
+                        ['Languages & Tools', ['Java', 'C++', 'Visual Basic', 'Git', 'GitHub', 'Database Design']],
                     ].map(([label, items]) => (
                         <div key={label} className="py-5 border-b tech-row border-border last:border-0">
                             <div className="text-xs tracking-widest uppercase text-muted">{label}</div>
@@ -206,26 +296,29 @@ export default function About() {
             {/* Experience */}
             <section ref={expRef} className="pt-8 space-y-6">
                 <div className="text-accent">// Experience</div>
-                <h2 className="heading-lg md:text-6xl">Professional Working Experience</h2>
+                <h2 className="heading-lg md:text-6xl">Professional & Leadership Experience</h2>
 
                 <div className="relative grid md:grid-cols-[420px_1fr] gap-8">
-                    <img className="w-full h-[560px] object-cover rounded-2xl" src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1200&auto=format&fit=crop" alt="Working" />
+                    <img className="w-full h-[560px] object-cover rounded-2xl" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="Working" />
                     <div className="relative">
                         <span className="absolute hidden w-3 h-3 rounded-full exp-dot md:block -left-4 top-2 bg-accent"></span>
                         <ul className="divide-y exp-list divide-border">
                             {[
-                                { company: 'CodeCraft Inc.', dates: 'Aug 2021 — Jun 2022', title: 'Sr. Full Stack Developer' },
-                                { company: 'CodeCraft Inc.', dates: 'Aug 2021 — Jun 2022', title: 'Jr. Full Stack Developer' },
-                                { company: 'CodeCraft Inc.', dates: 'Aug 2021 — Jun 2022', title: 'Full Stack Developer' },
-                                { company: 'CodeCraft Inc.', dates: 'Aug 2021 — Jun 2022', title: 'Frontend Developer' },
-                                { company: 'CodeCraft Inc.', dates: 'Aug 2021 — Jun 2022', title: 'Intern Frontend Developer' },
+                                { company: 'Career Connect Hub', dates: 'June 2025 — Present', title: 'Lead Programmer', desc: 'Designed online competition apps, connected 30+ students with mentors, raised 1.5M FRW for ventures' },
+                                { company: 'Growth Wave', dates: 'March 2025 — July 2025', title: 'Trainee', desc: 'Revamped school election system, designed pharmacy management system, taught system analysis' },
+                                { company: 'Africlouds', dates: 'July 2024 — September 2024', title: 'Intern', desc: 'Developed company website, designed B&B radio web app, conducted system research' },
+                                { company: 'Academic Bridge', dates: 'July 2023 — September 2024', title: 'Intern', desc: 'Designed prototypes for KudiBooks, developed election school system for ASYV' },
+                                { company: 'Byte Builders', dates: 'May 2023 — Present', title: 'Founder', desc: 'Taught HTML, CSS, JS, PHP; organized ASYV Hackathon and Rwanda Coding Academy exchange program' },
                             ].map((r) => (
-                                <li key={`${r.company}-${r.title}`} className="flex items-center justify-between gap-6 py-6 exp-row">
-                                    <div>
-                                        <div className="font-medium transition hover:text-accent">{r.company}</div>
-                                        <div className="mt-1 text-sm text-accent">{r.dates}</div>
+                                <li key={`${r.company}-${r.title}`} className="py-6 exp-row">
+                                    <div className="flex items-start justify-between gap-6">
+                                        <div>
+                                            <div className="font-medium transition hover:text-accent">{r.company}</div>
+                                            <div className="mt-1 text-sm text-accent">{r.dates}</div>
+                                        </div>
+                                        <div className="text-sm font-medium text-white/90 md:text-base">{r.title}</div>
                                     </div>
-                                    <div className="text-sm text-white/80 md:text-base">{r.title}</div>
+                                    <p className="mt-2 text-sm text-white/70">{r.desc}</p>
                                 </li>
                             ))}
                         </ul>
@@ -235,22 +328,48 @@ export default function About() {
 
             {/* Awards */}
             <section className="pt-10 space-y-6">
-                <div className="text-accent">// Awards</div>
-                <h2 className="heading-lg md:text-6xl">Awards & Recognition</h2>
-                <div className="divide-y awards-wrap divide-border">
+                <div className="text-accent">// Awards & Recognition</div>
+                <h2 className="heading-lg md:text-6xl">Honors & Achievements</h2>
+                <div className="relative awards-wrap">
                     {[
-                        { title: 'KSCCS Award', desc: 'Recognized for consistent delivery, code quality, and client satisfaction.', year: '2024', img: 'https://picsum.photos/seed/award1/64/64' },
-                        { title: 'Awards DEV', desc: 'Recognitions earned for excellence in modern web development.', year: '2022', img: 'https://picsum.photos/seed/award2/64/64' },
-                        { title: 'Award', desc: 'Celebrating milestones in software, design, and technical impact.', year: '2020', img: 'https://picsum.photos/seed/award3/64/64' },
-                        { title: 'DEVIES Awards', desc: 'Proof of passion, skill, and results in development journey.', year: '2018', img: 'https://picsum.photos/seed/award4/64/64' },
-                    ].map((a) => (
-                        <div key={a.title} className="award-row grid grid-cols-[64px_1fr_auto] items-center gap-6 py-6">
-                            <img className="object-cover w-16 h-16 rounded" src={a.img} alt={a.title} />
-                            <div>
-                                <div className="text-2xl font-display">{a.title}</div>
-                                <p className="mt-1 subtle">{a.desc}</p>
+                        {
+                            title: 'ASYV STEM Day 2024 Winner',
+                            desc: 'Automobile cane directing blinds project selected by 20+ teachers and 100+ students as Best 2024 STEAM Project Exhibition',
+                            year: '2024',
+                            img: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=64&h=64&auto=format&fit=crop'
+                        },
+                        {
+                            title: 'Provincial Wavumbuzi Entrepreneurial Challenge',
+                            desc: 'Presented sustainable solutions to poverty, ranked 2nd runner-up among provincial competitors in Rwanda',
+                            year: '2023',
+                            img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=64&h=64&auto=format&fit=crop'
+                        },
+                        {
+                            title: 'Immense Scholarship Award',
+                            desc: 'Selected as finalist in Immense Essay Competition (UK) and awarded scholarship of 200 euros',
+                            year: '2022',
+                            img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=64&h=64&auto=format&fit=crop'
+                        },
+                        {
+                            title: 'Agahozo-Shalom Youth Village Scholarship',
+                            desc: 'Awarded four-year full scholarship to Liquidnet Family High School at ASYV, graduated with 3.74 GPA',
+                            year: '2021',
+                            img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=64&h=64&auto=format&fit=crop'
+                        },
+                    ].map((a, i) => (
+                        <div
+                            key={a.title}
+                            className="sticky p-6 mb-4 award-card card"
+                            style={{ top: `${80 + i * 24}px`, zIndex: 10 - i }}
+                        >
+                            <div className="grid grid-cols-[64px_1fr_auto] items-center gap-6">
+                                <img className="object-cover w-16 h-16 rounded" src={a.img} alt={a.title} />
+                                <div>
+                                    <div className="text-xl font-display md:text-2xl">{a.title}</div>
+                                    <p className="mt-1 text-sm subtle md:text-base">{a.desc}</p>
+                                </div>
+                                <div className="text-sm text-accent">{a.year}</div>
                             </div>
-                            <div className="text-sm text-accent">{a.year}</div>
                         </div>
                     ))}
                 </div>
@@ -258,5 +377,3 @@ export default function About() {
         </div>
     )
 }
-
-
