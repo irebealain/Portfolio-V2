@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import portrait from '../assets/ASYVGraduation-202518052516th-May-2025_156.jpg'
+import portrait from '../assets/ASYVGraduation.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -291,7 +291,7 @@ export default function About() {
                 <div className="absolute w-40 h-40 rounded-full about-dot -top-8 -right-8 bg-emerald-500/30 blur-2xl" />
 
                 <h1 className="text-4xl font-semibold leading-tight text-center about-hero-title font-display sm:text-5xl md:text-6xl lg:text-7xl">
-                    I'M A FULL<br />STACK DEVELOPER
+                    HERE IS<br />MY ADVENTURE
                 </h1>
 
                 {/* Photo Stack that slides away on scroll - PINNED SECTION */}
@@ -334,34 +334,36 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Technologies (redesigned) */}
-            <section className="space-y-6">
-                <div className="text-accent">// Technologies</div>
-                <div className="p-6 tech-grid card">
-                    {[
-                        ['Frontend', ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS', 'Figma']],
-                        ['Backend & Mobile', ['Node.js', 'Express.js', 'PHP', 'Laravel', 'Python', 'Flutter', 'MongoDB']],
-                        ['Languages & Tools', ['Java', 'C++', 'Visual Basic', 'Git', 'GitHub', 'Database Design']],
-                    ].map(([label, items]) => (
-                        <div key={label} className="py-5 border-b tech-row border-border last:border-0">
-                            <div className="text-xs tracking-widest uppercase text-muted">{label}</div>
-                            <div className="flex flex-wrap gap-2 mt-3">
-                                {items.map((t) => (
-                                    <span key={t} className="px-3 py-1 text-xs border rounded-full bg-accent/10 text-accent border-accent/20">{t}</span>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
             {/* Experience */}
             <section ref={expRef} className="pt-8 space-y-6">
                 <div className="text-accent">// Experience</div>
-                <h2 className="heading-lg md:text-6xl">Professional & Leadership Experience</h2>
-
-                <div className="relative gap-8">
-                    <div className="relative">
+                <h2 className="heading-lg md:text-6xl">Leadership & Extracurricular Experience</h2>
+                
+                <div className="relative gap-8 flex flex-row">
+                    <div className="relative w-1/2">
+                        <span className="absolute hidden w-3 h-3 rounded-full exp-dot md:block -left-4 top-2 bg-accent"></span>
+                        <ul className="divide-y exp-list divide-border">
+                            {[
+                                { company: 'Career Connect Hub', dates: 'June 2025 — Present', title: 'Lead Programmer', desc: 'Designed online competition apps, connected 30+ students with mentors, raised 1.5M FRW for ventures' },
+                                { company: 'Growth Wave', dates: 'March 2025 — July 2025', title: 'Trainee', desc: 'Revamped school election system, designed pharmacy management system, taught system analysis' },
+                                { company: 'Africlouds', dates: 'July 2024 — September 2024', title: 'Intern', desc: 'Developed company website, designed B&B radio web app, conducted system research' },
+                                { company: 'Academic Bridge', dates: 'July 2023 — September 2024', title: 'Intern', desc: 'Designed prototypes for KudiBooks, developed election school system for ASYV' },
+                                { company: 'Byte Builders', dates: 'May 2023 — Present', title: 'Founder', desc: 'Taught HTML, CSS, JS, PHP; organized ASYV Hackathon and Rwanda Coding Academy exchange program' },
+                            ].map((r) => (
+                                <li key={`${r.company}-${r.title}`} className="py-6 exp-row">
+                                    <div className="flex items-start justify-between gap-6">
+                                        <div>
+                                            <div className="font-medium transition hover:text-accent">{r.company}</div>
+                                            <div className="mt-1 text-sm text-accent">{r.dates}</div>
+                                        </div>
+                                        <div className="text-sm font-medium text-white/90 md:text-base">{r.title}</div>
+                                    </div>
+                                    <p className="mt-2 text-sm text-white/70">{r.desc}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="relative w-1/2">
                         <span className="absolute hidden w-3 h-3 rounded-full exp-dot md:block -left-4 top-2 bg-accent"></span>
                         <ul className="divide-y exp-list divide-border">
                             {[
@@ -430,6 +432,27 @@ export default function About() {
                                     <p className="mt-1 text-sm subtle md:text-base">{a.desc}</p>
                                 </div>
                                 <div className="text-sm text-accent">{a.year}</div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Technologies (redesigned) */}
+            <section className="space-y-6">
+                <div className="text-accent">// Technologies</div>
+                <div className="p-6 tech-grid card">
+                    {[
+                        ['Frontend', ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS', 'Figma']],
+                        ['Backend & Mobile', ['Node.js', 'Express.js', 'PHP', 'Laravel', 'Python', 'Flutter', 'MongoDB']],
+                        ['Languages & Tools', ['Java', 'C++', 'Visual Basic', 'Git', 'GitHub', 'Database Design']],
+                    ].map(([label, items]) => (
+                        <div key={label} className="py-5 border-b tech-row border-border last:border-0">
+                            <div className="text-xs tracking-widest uppercase text-muted">{label}</div>
+                            <div className="flex flex-wrap gap-2 mt-3">
+                                {items.map((t) => (
+                                    <span key={t} className="px-3 py-1 text-xs border rounded-full bg-accent/10 text-accent border-accent/20">{t}</span>
+                                ))}
                             </div>
                         </div>
                     ))}

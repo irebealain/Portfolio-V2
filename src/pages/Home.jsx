@@ -3,7 +3,12 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Palette, Server, Rocket, Users } from 'lucide-react'
 import Testimonials from '../components/Testimonials.jsx'
-import electionSystem from '../assets/ElectionDashboard.png'
+import asyvLogo from '../assets/logos/agahozo-shalom-youth-village.png';
+import cchLogo from '../assets/logos/career-connect-hub.png';
+import africloudsLogo from '../assets/logos/africlouds.png';
+import academicBridgeLogo from '../assets/logos/academic-bridge.png';
+import growthWaveLogo from '../assets/logos/growth-wave.png';
+import kudiBooksLogo from '../assets/logos/kudi-books.png';
 import alain from '../assets/alain.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -108,11 +113,12 @@ export default function Home() {
             {/* Hero */}
             <section className="grid items-end gap-8 pt-10 md:pt-20 md:grid-cols-2">
                 <div>
-                    <p className="text-xs tracking-widest uppercase hero-kicker text-accent">Hey, I'm a Full Stack Developer</p>
-                    <h1 className="mt-4 hero-name heading-xxl">{name}</h1>
+                    <p className="text-xs tracking-widest uppercase hero-kicker text-accent">Hey, Feel Free To Call Me</p>
+                    <h1 className="mt-4 hero-name heading-xl">{name}</h1>
                     <p className="max-w-md mt-6 hero-copy subtle">
-                        I build innovative web solutions that solve real-world problems. From founding Byte Builders to connecting 30+ students with mentors at Career Connect Hub, I blend technical expertise with social impact. Experienced in React, Node.js, and full-stack development.
+                        Alain Irebe Gashumba is a young Rwandan leader dedicated to technology, gender equality, and community growth. A graduate of Agahozo-Shalom Youth Village, he founded ByteBuilders, taught programming to over 30 students, and organized hackathons. As his community’s Minister of Gender and Family Promotion, he created a girls’ referee class to empower young women. With experience from Africlouds, GrowthWave, and Academic Bridge, Alain uses creativity and leadership to drive positive change.
                     </p>
+                    <a className="inline-flex px-6 py-3 mt-8 transition-transform rounded-full bg-accent text-accent-fore hover:scale-105" href="/alain-cv.pdf" target="_blank">View My Resume</a>
                 </div>
                 <div className="relative flex justify-center md:justify-end">
                     <div className="relative hero-portrait">
@@ -122,52 +128,34 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Testimonials */}
-            <div className="reveal-up">
-                <Testimonials />
-            </div>
-
             {/* Clients */}
             <section className="space-y-6 reveal-up">
-                <div className="text-accent">// My Clients & Partners</div>
+                <div className="text-accent">// Organizations I've Worked With</div>
                 <h2 className="heading-lg">Collaborated With Amazing Organizations</h2>
+
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {[
-                        'Career Connect Hub',
-                        'Agahozo-Shalom Youth Village',
-                        'Africlouds',
-                        'Academic Bridge',
-                        'Growth Wave',
-                        'KudiBooks'
-                    ].map((c) => (
-                        <div key={c} className="flex items-center justify-center p-5 transition-colors cursor-pointer client-card card text-white/70 hover:text-white hover:bg-accent/5">{c}</div>
+                        { name: 'Career Connect Hub', logo: cchLogo },
+                        { name: 'Agahozo-Shalom Youth Village', logo: asyvLogo },
+                        { name: 'Africlouds', logo: africloudsLogo },
+                        { name: 'Academic Bridge', logo: academicBridgeLogo },
+                        { name: 'Growth Wave', logo: growthWaveLogo },
+                        { name: 'KudiBooks', logo: kudiBooksLogo },
+                    ].map((org) => (
+                        <div
+                            key={org.name}
+                            className="flex items-center justify-center p-5 transition-colors cursor-pointer client-card card hover:bg-accent/5"
+                        >
+                            <img
+                                src={org.logo}
+                                alt={org.name}
+                                className="max-h-12 object-contain opacity-70 hover:opacity-100 transition"
+                            />
+                        </div>
                     ))}
                 </div>
             </section>
 
-            {/* Blogs */}
-            <section className="space-y-6 reveal-up">
-                <div className="text-accent">// Insights & Learning</div>
-                <h2 className="heading-lg">Thoughts on Technology & Innovation</h2>
-                <div className="grid gap-6 md:grid-cols-3">
-                    {[
-                        ['Building Election Systems: Lessons from ASYV', 'System Design', '2025-03-15'],
-                        ['How I Taught 50+ Students to Code at Byte Builders', 'Education', '2024-11-20'],
-                        ['From Idea to Impact: Raising 10M FRW for Student Ventures', 'Entrepreneurship', '2025-06-10'],
-                    ].map(([title, tag, date], i) => (
-                        <article key={title} className="overflow-hidden transition-transform cursor-pointer card hover:scale-105">
-                            <img className="object-cover w-full h-56" src={`https://images.unsplash.com/photo-${1517694712202 + i * 1000}-3f7589b82d4a?q=80&w=1200&auto=format&fit=crop`} alt="Blog cover" />
-                            <div className="p-5">
-                                <div className="flex items-center gap-3 text-xs text-muted">
-                                    <span className="px-2 py-1 border rounded-full bg-accent/10 text-accent border-accent/20">{tag}</span>
-                                    <span>{new Date(date).toDateString()}</span>
-                                </div>
-                                <h3 className="mt-2 text-xl font-display">{title}</h3>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-            </section>
 
             {/* CTA */}
             <section className="relative py-24 text-center reveal-up">
@@ -196,39 +184,18 @@ export default function Home() {
             </section>
 
             {/* Skills + Resume and Stats */}
-            <section className="grid items-start gap-8 md:grid-cols-2 reveal-up">
-                <div className="space-y-6">
-                    <div>
-                        <div className="text-accent">// Technical Skills</div>
-                        <div className="pt-4 mt-2 border-t border-border">
-                            <div className="font-medium">Frontend Development</div>
-                            <div className="mt-2 subtle">HTML • CSS • JavaScript • React.js • Tailwind CSS • Figma</div>
-                        </div>
-                        <div className="pt-4 mt-4 border-t border-border">
-                            <div className="font-medium">Backend & Databases</div>
-                            <div className="mt-2 subtle">Node.js • Express.js • PHP • Laravel • MongoDB • MySQL</div>
-                        </div>
-                        <div className="pt-4 mt-4 border-t border-border">
-                            <div className="font-medium">Languages & Mobile</div>
-                            <div className="mt-2 subtle">Python • Java • C++ • Flutter • Visual Basic</div>
-                        </div>
-                        <div className="pt-4 mt-4 border-t border-border">
-                            <div className="font-medium">Tools & Frameworks</div>
-                            <div className="mt-2 subtle">Git • GitHub • GSAP • System Design • Database Design</div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p className="max-w-xl subtle">
+            <section className="reveal-up">
+                <div className='w-full'>
+                    <p className="w-full subtle">
                         From teaching coding at Byte Builders to developing enterprise systems at Growth Wave and Africlouds, I've built a diverse skill set. I'm passionate about creating technology that empowers communities and solves real challenges.
                     </p>
-                    <a className="inline-flex px-6 py-3 mt-6 transition-transform rounded-full bg-accent text-accent-fore hover:scale-105" href="/alain-cv.pdf" target="_blank">View My Resume</a>
+                    
 
                     <div className="grid grid-cols-3 gap-8 mt-12">
                         {[
                             ['3', 'Years Experience'],
                             ['6', 'Organizations Served'],
-                            ['15', 'Projects Completed']
+                            ['10', 'Projects Completed']
                         ].map(([num, label]) => (
                             <div key={label}>
                                 <div className="text-5xl stat-number font-display text-accent" data-target={num}>{num}+</div>
@@ -239,58 +206,10 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Explore Work */}
-            <section id="projects" className="space-y-6 reveal-up">
-                <div className="flex items-end justify-between">
-                    <div>
-                        <div className="text-accent">// Featured Projects</div>
-                        <h2 className="mt-2 heading-lg">Building Solutions That Matter</h2>
-                    </div>
-                </div>
-                <div className="grid gap-8 sm:grid-cols-2">
-                    {[
-                        {
-                            title: 'ASYV Election System',
-                            desc: 'Revamped school election system with real-time voting, candidate management, and analytics dashboard.',
-                            img: electionSystem,
-                            tags: ['React', 'Node.js', 'MongoDB', 'Express']
-                        },
-                        {
-                            title: 'Career Connect Hub Platform',
-                            desc: 'Web application connecting 30+ students with mentors, featuring matching algorithms and communication tools.',
-                            img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop',
-                            tags: ['React', 'Express.js', 'Database']
-                        },
-                        {
-                            title: 'B&B Radio Web App',
-                            desc: 'Designed and developed streaming platform for Africlouds radio station with live broadcast features.',
-                            img: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1200&auto=format&fit=crop',
-                            tags: ['HTML', 'CSS', 'JavaScript', 'PHP']
-                        },
-                        {
-                            title: 'Pharmacy Management System',
-                            desc: 'Complete inventory and prescription management system for Growth Wave healthcare operations.',
-                            img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop',
-                            tags: ['System Design', 'Database', 'PHP']
-                        },
-                    ].map((proj) => (
-                        <article key={proj.title} className="overflow-hidden cursor-pointer project-card card group">
-                            <div className="aspect-[16/10] bg-black/40 overflow-hidden">
-                                <img className="object-cover w-full h-full transition-transform project-img" src={proj.img} alt={proj.title} />
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-2xl transition-colors font-display group-hover:text-accent">{proj.title}</h3>
-                                <p className="mt-2 subtle">{proj.desc}</p>
-                                <div className="flex flex-wrap gap-2 mt-4">
-                                    {proj.tags.map((t) => (
-                                        <span key={t} className="px-2 py-1 text-xs border rounded-full bg-accent/10 text-accent border-accent/20">{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-            </section>
+            {/* Testimonials */}
+            <div className="reveal-up">
+                <Testimonials />
+            </div>
 
             {/* Services */}
             <section className="space-y-6 reveal-up">
