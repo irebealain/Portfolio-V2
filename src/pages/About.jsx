@@ -9,24 +9,12 @@ export default function About() {
     const rootRef = useRef(null)
     const heroRef = useRef(null)
     const expRef = useRef(null)
+    const photoStackRef = useRef(null)
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             // Hero animations
             gsap.from('.about-hero-title', { y: 16, opacity: 0, duration: 0.6, ease: 'power3.out' })
-            gsap.from('.about-portrait', { scale: 0.96, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.05 })
-
-            // Parallax portrait over title
-            gsap.to('.about-portrait', {
-                y: -80,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: heroRef.current,
-                    start: 'top top',
-                    end: '+=500',
-                    scrub: true,
-                },
-            })
 
             // Moving lime dot in top-right
             gsap.to('.about-dot', {
@@ -51,6 +39,52 @@ export default function About() {
                     end: '+=500',
                     scrub: true,
                 },
+            })
+
+            // Photo Stack Animation - Stacked cards that slide away on scroll
+            const photoCards = gsap.utils.toArray('.photo-card')
+
+            // CRITICAL: Ensure all cards start perfectly flat and stacked
+            photoCards.forEach((card, index) => {
+                gsap.set(card, {
+                    zIndex: photoCards.length - index,
+                    scale: 1,
+                    x: 0,
+                    y: 0,
+                    rotation: 0, // MUST be 0 degrees
+                    opacity: 1,
+                    transformOrigin: 'center center',
+                    force3D: true
+                })
+            })
+
+            // Create a timeline that pins the section
+            const photoTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: photoStackRef.current,
+                    start: 'center center',
+                    end: '+=2000', // Total scroll distance needed
+                    scrub: 1,
+                    pin: true, // Pin the section
+                    anticipatePin: 1,
+                }
+            })
+
+            // Then create scroll animations - photos move in pairs
+            photoCards.forEach((card, index) => {
+                const direction = index % 2 === 0 ? 1 : -1 // Alternate left/right
+
+                // Photos move in pairs: 0&1 together, 2&3 together, 4&5 together, etc.
+                const pairIndex = Math.floor(index / 2)
+                const startProgress = pairIndex * 0.18 // Start position in timeline (0 to 0.9)
+
+                photoTimeline.to(card, {
+                    x: direction * (window.innerWidth > 768 ? 800 : 400), // Responsive slide distance
+                    rotation: direction * 70,
+                    opacity: 0,
+                    scale: 0.7,
+                    ease: 'none',
+                }, startProgress)
             })
 
             // Word-by-word rise for the code-like paragraph
@@ -226,11 +260,24 @@ export default function About() {
         { t: '</p>', className: 'text-accent font-mono' },
     ]
 
+    // Placeholder images - replace these with your actual image imports
+    const photos = [
+        portrait, // Replace with your actual images
+        portrait,
+        portrait,
+        portrait,
+        portrait,
+        portrait,
+        portrait,
+        portrait,
+        portrait,
+        portrait,
+    ]
 
     return (
         <div ref={rootRef} className="space-y-16">
             {/* Hero block matching reference */}
-            <section ref={heroRef} className="relative pt-16 pb-24 overflow-visible md:pt-24">
+            <section ref={heroRef} className="relative pt-16 pb-24 overflow-hidden md:pt-24">
                 {/* Blurry tech logos background */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none about-logos">
                     <div className="grid grid-cols-3 gap-10 text-6xl font-black sm:grid-cols-6 opacity-10 blur-md">
@@ -247,15 +294,30 @@ export default function About() {
                     I'M A FULL<br />STACK DEVELOPER
                 </h1>
 
-                {/* Portrait that moves over the title on scroll */}
-                <div className="flex justify-center mt-14">
-                    <div className="relative">
+                {/* Photo Stack that slides away on scroll - PINNED SECTION */}
+                <div ref={photoStackRef} className="relative flex items-center justify-center h-screen overflow-hidden mt-14">
+                    <div className="relative w-[340px] h-[440px] md:w-[420px] md:h-[520px]">
+                        {/* Glow effect */}
                         <div className="absolute -inset-6 rounded-2xl bg-emerald-400/10 blur-2xl" />
-                        <img
-                            className="about-portrait relative z-10 will-change-transform w-[280px] h-[320px] md:w-[380px] md:h-[420px] lg:w-[460px] lg:h-[500px] object-cover rounded-2xl shadow-2xl"
-                            src={portrait}
-                            alt="About portrait"
-                        />
+
+                        {/* Stacked photo cards - all perfectly aligned */}
+                        {photos.map((photo, index) => (
+                            <div
+                                key={index}
+                                className="absolute top-0 left-0 w-full h-full photo-card will-change-transform"
+                                style={{
+                                    transform: 'translate3d(0px, 0px, 0px) rotate(0deg) scale(1)',
+                                    opacity: 1,
+                                    transformOrigin: 'center center'
+                                }}
+                            >
+                                <img
+                                    className="object-cover w-full h-full shadow-2xl rounded-2xl"
+                                    src={photo}
+                                    alt={`Photo ${index + 1}`}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
 
@@ -298,8 +360,7 @@ export default function About() {
                 <div className="text-accent">// Experience</div>
                 <h2 className="heading-lg md:text-6xl">Professional & Leadership Experience</h2>
 
-                <div className="relative grid md:grid-cols-[420px_1fr] gap-8">
-                    <img className="w-full h-[560px] object-cover rounded-2xl" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="Working" />
+                <div className="relative gap-8">
                     <div className="relative">
                         <span className="absolute hidden w-3 h-3 rounded-full exp-dot md:block -left-4 top-2 bg-accent"></span>
                         <ul className="divide-y exp-list divide-border">
