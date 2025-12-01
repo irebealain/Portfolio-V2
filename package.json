@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "env": "^0.0.2",
     "gsap": "^3.13.0",
     "lucide": "^0.552.0",
     "lucide-react": "^0.552.0",
