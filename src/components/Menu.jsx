@@ -42,11 +42,11 @@ export default function Menu() {
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
                         </span>
                     </div>
-                    <MenuItem to="/preview" label="Home" onNavigate={() => setOpen(false)} />
-                    <MenuItem to="/preview/about" label="About" onNavigate={() => setOpen(false)} />
-                    <MenuItem to="/preview/projects" label="Project" onNavigate={() => setOpen(false)} />
-                    <MenuItem to="/preview/blog" label="Blog" onNavigate={() => setOpen(false)} />
-                    <MenuItem to="/preview/contact" label="Contact" onNavigate={() => setOpen(false)} />
+                    <MenuItem to="/home" label="Home" onNavigate={() => setOpen(false)} />
+                    <MenuItem to="/about" label="About" onNavigate={() => setOpen(false)} />
+                    <MenuItem to="/projects" label="Project" onNavigate={() => setOpen(false)} />
+                    <MenuItem to="/blog" label="Blog" onNavigate={() => setOpen(false)} />
+                    <MenuItem to="/contact" label="Contact" onNavigate={() => setOpen(false)} />
                 </div>
             </div>
         </div>

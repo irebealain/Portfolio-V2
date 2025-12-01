@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function LoadingPage({ onLoadComplete }) {
+export default function LoadingPage() {
     const [progress, setProgress] = useState(0)
     const [showWelcome, setShowWelcome] = useState(true)
     const [animationStage, setAnimationStage] = useState('running') // running, hugging, complete
+    const navigate = useNavigate()
 
     useEffect(() => {
         // Animation stages timing
@@ -17,7 +19,8 @@ export default function LoadingPage({ onLoadComplete }) {
                     clearInterval(interval)
                     setTimeout(() => {
                         setShowWelcome(false)
-                        if (onLoadComplete) onLoadComplete()
+                        // Navigate to home page after animation completes
+                        navigate('/home')
                     }, 1000)
                     return 100
                 }
@@ -26,7 +29,7 @@ export default function LoadingPage({ onLoadComplete }) {
         }, 50)
 
         return () => clearInterval(interval)
-    }, [onLoadComplete])
+    }, [navigate])
 
     if (!showWelcome) return null
 
@@ -35,69 +38,6 @@ export default function LoadingPage({ onLoadComplete }) {
             <div className="relative w-full text-center">
                 {/* Animated glow background */}
                 <div className="absolute inset-0 -m-20 rounded-full opacity-30 bg-emerald-500/20 blur-3xl animate-pulse" />
-                
-                {/* Running/Hugging Boy Character */}
-                <div className="relative z-10 mb-8">
-                    <div className={`inline-block ${animationStage === 'running' ? 'animate-run-forward' : ''} ${animationStage === 'hugging' ? 'animate-hug-user' : ''}`}>
-                        <div className="relative w-40 h-48 mx-auto md:w-48 md:h-56">
-                            {/* Character Body */}
-                            <div className="absolute inset-0">
-                                {/* Head */}
-                                <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-amber-200 to-amber-300 rounded-full ${animationStage === 'running' ? 'animate-bob' : ''}`}>
-                                    {/* Happy face */}
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        {/* Eyes */}
-                                        <div className="absolute flex gap-3 top-7">
-                                            <div className={`w-2 h-3 bg-black rounded-full ${animationStage === 'running' ? 'animate-blink' : ''}`} />
-                                            <div className={`w-2 h-3 bg-black rounded-full ${animationStage === 'running' ? 'animate-blink' : ''}`} />
-                                        </div>
-                                        {/* Big smile */}
-                                        <div className="absolute w-8 h-4 border-b-2 border-black rounded-b-full top-12" />
-                                        {/* Rosy cheeks */}
-                                        <div className="absolute w-4 h-3 rounded-full opacity-40 bg-rose-400 left-2 top-10" />
-                                        <div className="absolute w-4 h-3 rounded-full opacity-40 bg-rose-400 right-2 top-10" />
-                                    </div>
-                                </div>
-
-                                {/* Body */}
-                                <div className="absolute w-16 h-20 transform -translate-x-1/2 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl top-20 left-1/2 md:w-20 md:h-24">
-                                    {/* Shirt detail */}
-                                    <div className="absolute w-2 h-2 bg-white rounded-full top-2 left-1/2 -translate-x-1/2" />
-                                </div>
-
-                                {/* Arms - Different positions for running/hugging */}
-                                {animationStage === 'running' ? (
-                                    <>
-                                        <div className="absolute w-4 h-16 origin-top transform bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full top-22 left-4 md:h-20 animate-arm-swing-left" />
-                                        <div className="absolute w-4 h-16 origin-top transform bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full top-22 right-4 md:h-20 animate-arm-swing-right" />
-                                    </>
-                                ) : (
-                                    <>
-                                        <div className="absolute w-4 h-16 origin-top bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full top-22 left-2 md:h-20 animate-hug-arm-left" />
-                                        <div className="absolute w-4 h-16 origin-top bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full top-22 right-2 md:h-20 animate-hug-arm-right" />
-                                    </>
-                                )}
-
-                                {/* Legs */}
-                                <div className={`absolute left-1/2 -translate-x-8 top-36 md:top-40 w-4 h-12 md:h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full ${animationStage === 'running' ? 'animate-leg-left' : ''}`} />
-                                <div className={`absolute left-1/2 translate-x-4 top-36 md:top-40 w-4 h-12 md:h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full ${animationStage === 'running' ? 'animate-leg-right' : ''}`} />
-
-                                {/* Shoes */}
-                                <div className={`absolute left-1/2 -translate-x-10 bottom-0 w-6 h-3 bg-gray-800 rounded-full ${animationStage === 'running' ? 'animate-foot-left' : ''}`} />
-                                <div className={`absolute left-1/2 translate-x-4 bottom-0 w-6 h-3 bg-gray-800 rounded-full ${animationStage === 'running' ? 'animate-foot-right' : ''}`} />
-                            </div>
-
-                            {/* Heart particles when hugging */}
-                            {animationStage === 'hugging' && (
-                                <>
-                                    <div className="absolute text-2xl animate-heart-float-1">❤️</div>
-                                    <div className="absolute text-xl animate-heart-float-2">💚</div>
-                                    <div className="absolute text-lg animate-heart-float-3">💙</div>
-                                </>
-                            )}
-                        </div>
-                    </div>
-                </div>
 
                 {/* Welcome text */}
                 <div className="space-y-4 animate-fade-in">

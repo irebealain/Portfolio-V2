@@ -23,8 +23,8 @@ function App() {
 
         <main className="py-12 container-max">
           <Routes>
-            <Route path="/preview" element={<UnderConstruction />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<UnderConstruction />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
           </Routes>
