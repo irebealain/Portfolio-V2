@@ -10,23 +10,23 @@ gsap.registerPlugin(ScrollTrigger)
 const TESTIMONIALS = [
     {
         quote:
-            'Bruno immediately understood our product goals and translated them into a beautifully optimized web experience. His technical expertise and collaborative spirit made a complex project feel effortless.',
+            'Alain immediately understood our product goals and translated them into a beautifully optimized web experience. His technical expertise and collaborative spirit made a complex project feel effortless.',
         name: 'Christian',
-        title: 'Software Engineer',
+        title: 'Co-founder @ Academic Bridge',
         avatar: christian,
     },
     {
         quote:
-            'Working with Bruno was a game-changer for our e-commerce revamp. He delivered scalable, high-quality code and brought clarity to the entire process.',
+            'Working with Alain was a game-changer for our database dictionary. He delivered scalable, high-quality code and brought clarity to the entire process.',
         name: 'Justin',
-        title: 'Full Stack Developer',
+        title: 'IT Officer @ ASYV',
         avatar: justin,
     },
     {
         quote:
             'He understood our vision, delivered clean & scalable code, and communicated clearly throughout the project.',
         name: 'Pacifique',
-        title: 'Frontend Developer',
+        title: 'Full Stack Developer',
         avatar: pacifique,
     },
 ]

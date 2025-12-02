@@ -2,6 +2,12 @@ import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import portrait from '../assets/asyv-graduation.png'
+import boardChairVisitation from '../assets/pictures/board-chair-sg.jpg'
+import doneCalvin from '../assets/pictures/donecalvin_75.jpg'
+import eyPitching from '../assets/pictures/EY-pitching.jpg'
+import Mentorship from '../assets/pictures/Mentorship_22.jpg'
+import SwearingIn from '../assets/pictures/swearing-in.jpg'
+// import
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -146,128 +152,15 @@ export default function About() {
         return () => ctx.revert()
     }, [])
 
-    // Code-like hero copy tokens for per-word animation
-    const tokens = [
-        { t: '<p>', className: 'text-accent font-mono' },
-        { t: 'Alain' },
-        { t: 'Irebe' },
-        { t: 'Gashumba' },
-        { t: 'is' },
-        { t: 'a' },
-        { t: 'passionate', highlight: true },
-        { t: 'Rwandan' },
-        { t: 'high' },
-        { t: 'school' },
-        { t: 'graduate' },
-        { t: 'from' },
-        { t: 'Agahozo-Shalom' },
-        { t: 'Youth' },
-        { t: 'Village,' },
-        { t: 'specializing' },
-        { t: 'in' },
-        { t: 'Mathematics,' },
-        { t: 'Physics,' },
-        { t: 'Computer', highlight: true },
-        { t: 'Science,' },
-        { t: 'and' },
-        { t: 'Entrepreneurship.' },
-        { t: 'As' },
-        { t: 'founder' },
-        { t: 'of' },
-        { t: 'Byte', highlight: true },
-        { t: 'Builders,' },
-        { t: 'he' },
-        { t: 'taught' },
-        { t: 'coding' },
-        { t: 'to' },
-        { t: 'peers,' },
-        { t: 'organized' },
-        { t: 'hackathons,' },
-        { t: 'and' },
-        { t: 'built' },
-        { t: 'exchange' },
-        { t: 'programs.' },
-        { t: 'At' },
-        { t: 'Career' },
-        { t: 'Connect' },
-        { t: 'Hub,' },
-        { t: 'he' },
-        { t: 'connected' },
-        { t: '30+' },
-        { t: 'students' },
-        { t: 'with' },
-        { t: 'mentors' },
-        { t: 'and' },
-        { t: 'raised' },
-        { t: '1.5M' },
-        { t: 'FRW' },
-        { t: 'for' },
-        { t: 'ventures.' },
-        { t: 'Through' },
-        { t: 'internships' },
-        { t: 'at' },
-        { t: 'Africlouds,' },
-        { t: 'Growth' },
-        { t: 'Wave,' },
-        { t: 'and' },
-        { t: 'Academic' },
-        { t: 'Bridge,' },
-        { t: 'he' },
-        { t: 'developed', highlight: true },
-        { t: 'web' },
-        { t: 'applications,' },
-        { t: 'designed' },
-        { t: 'systems,' },
-        { t: 'and' },
-        { t: 'mentored' },
-        { t: 'teams.' },
-        { t: 'Winner' },
-        { t: 'of' },
-        { t: 'ASYV' },
-        { t: 'STEM' },
-        { t: 'Day' },
-        { t: '2024' },
-        { t: 'and' },
-        { t: 'runner-up' },
-        { t: 'in' },
-        { t: 'entrepreneurial' },
-        { t: 'challenges,' },
-        { t: 'Alain' },
-        { t: 'blends', highlight: true },
-        { t: 'technical' },
-        { t: 'expertise' },
-        { t: 'with' },
-        { t: 'leadership' },
-        { t: 'and' },
-        { t: 'community' },
-        { t: 'impact.' },
-        { t: 'Fluent' },
-        { t: 'in' },
-        { t: 'four' },
-        { t: 'languages,' },
-        { t: 'he' },
-        { t: 'is' },
-        { t: 'driven' },
-        { t: 'by' },
-        { t: 'curiosity,' },
-        { t: 'creativity,' },
-        { t: 'and' },
-        { t: 'using' },
-        { t: 'technology', highlight: true },
-        { t: 'for' },
-        { t: 'social' },
-        { t: 'transformation.' },
-        { t: '</p>', className: 'text-accent font-mono' },
-    ]
 
     // Placeholder images - replace these with your actual image imports
     const photos = [
         portrait, // Replace with your actual images
-        portrait,
-        portrait,
-        portrait,
-        portrait,
-        portrait,
+        boardChairVisitation,
+        doneCalvin,
+        eyPitching,
+        SwearingIn,
+        Mentorship,
         portrait,
         portrait,
         portrait,
@@ -296,7 +189,7 @@ export default function About() {
 
                 {/* Photo Stack that slides away on scroll - PINNED SECTION */}
                 <div ref={photoStackRef} className="relative flex items-center justify-center h-screen overflow-hidden mt-14">
-                    <div className="relative w-[340px] h-[440px] md:w-[420px] md:h-[520px]">
+                    <div className="relative w-[35rem] h-[35rem] md:w-[420px] md:h-[520px]">
                         {/* Glow effect */}
                         <div className="absolute -inset-6 rounded-2xl bg-emerald-400/10 blur-2xl" />
 
@@ -312,7 +205,7 @@ export default function About() {
                                 }}
                             >
                                 <img
-                                    className="object-cover w-full h-full shadow-2xl rounded-2xl"
+                                    className="object-fit w-full h-full shadow-2xl rounded-2xl"
                                     src={photo}
                                     alt={`Photo ${index + 1}`}
                                 />
@@ -320,24 +213,12 @@ export default function About() {
                         ))}
                     </div>
                 </div>
-
-                {/* Code-like animated paragraph */}
-                <div className="max-w-3xl mx-auto mt-12 text-2xl leading-relaxed text-center about-words">
-                    {tokens.map((tok, i) => (
-                        <span
-                            key={i}
-                            className={`about-word inline-block text-base leading-[0.5rem] mr-2 ${tok.highlight ? 'text-accent' : ''} ${tok.className ? tok.className : ''}`}
-                        >
-                            {tok.t}
-                        </span>
-                    ))}
-                </div>
             </section>
 
             {/* Experience */}
             <section ref={expRef} className="pt-8 space-y-6">
                 <div className="text-accent">// Experience</div>
-                <h2 className="heading-lg md:text-6xl">Leadership & Extracurricular Experience</h2>
+                <h2 className="heading-lg md:text-6xl">Leadership, Extracurricular & Experience</h2>
                 
                 <div className="relative gap-8 flex flex-row">
                     <div className="relative w-1/2">
@@ -349,6 +230,7 @@ export default function About() {
                                 { company: 'Africlouds', dates: 'July 2024 — September 2024', title: 'Intern', desc: 'Developed company website, designed B&B radio web app, conducted system research' },
                                 { company: 'Academic Bridge', dates: 'July 2023 — September 2024', title: 'Intern', desc: 'Designed prototypes for KudiBooks, developed election school system for ASYV' },
                                 { company: 'Byte Builders', dates: 'May 2023 — Present', title: 'Founder', desc: 'Taught HTML, CSS, JS, PHP; organized ASYV Hackathon and Rwanda Coding Academy exchange program' },
+                                { company: 'Jackal Tech Company Ltd', dates: 'January 2023 – Present', title: 'Active Member', desc: 'Campaigned for the concept of using telescopes; designed a coin-counting machine; organized and coordinated Jackal Programmers Days, Electronics and 3D Designing; pitched projects at STEM Days and graduations; and chaired the admission process for recruitment of new volunteers.' },
                             ].map((r) => (
                                 <li key={`${r.company}-${r.title}`} className="py-6 exp-row">
                                     <div className="flex items-start justify-between gap-6">
@@ -367,11 +249,11 @@ export default function About() {
                         <span className="absolute hidden w-3 h-3 rounded-full exp-dot md:block -left-4 top-2 bg-accent"></span>
                         <ul className="divide-y exp-list divide-border">
                             {[
-                                { company: 'Career Connect Hub', dates: 'June 2025 — Present', title: 'Lead Programmer', desc: 'Designed online competition apps, connected 30+ students with mentors, raised 1.5M FRW for ventures' },
-                                { company: 'Growth Wave', dates: 'March 2025 — July 2025', title: 'Trainee', desc: 'Revamped school election system, designed pharmacy management system, taught system analysis' },
-                                { company: 'Africlouds', dates: 'July 2024 — September 2024', title: 'Intern', desc: 'Developed company website, designed B&B radio web app, conducted system research' },
-                                { company: 'Academic Bridge', dates: 'July 2023 — September 2024', title: 'Intern', desc: 'Designed prototypes for KudiBooks, developed election school system for ASYV' },
-                                { company: 'Byte Builders', dates: 'May 2023 — Present', title: 'Founder', desc: 'Taught HTML, CSS, JS, PHP; organized ASYV Hackathon and Rwanda Coding Academy exchange program' },
+                                { company: 'Isomo Circles @ Bridge2Rwanda', dates: 'July 2023–July 2025', title: 'Scholar', desc: 'Learnt different topics like Young Earth vs Old Earth Theories, Critical Reading, Perspectives, Innovative Thinking, Career Exploration, Literature, Climate Economy, Public Speaking, Community Service and Discipleship.' },
+                                { company: 'Washington University in St. Louis, Dual Enrollment', dates: ' May 2024–July 2024', title: 'Scholar', desc: 'Introduction to Environmental Science (Energy Saving, Water Conflict, Ocean Acidification,Agriculture and Pesticide Spraying, World Climate Change, Risk Prevention, and Biome Conservation) and Personal Narrative (Writing)' },
+                                { company: 'Georgetown University-Qatar - Global Challengers Program', dates: ' May 2024', title: 'Scholar', desc: 'Social Entrepreneurship (Starting a New Business, NGO, and Program; Effective Management; Business Model Canvas; and Fundraising)' },
+                                { company: 'Pay It Forward', dates: ' September 2022 – July 2023', title: 'Secretary', desc: 'Invited renowned speakers to speak to the community in the Lead Series; organized charity projects to help vulnerable families with basic materials and health insurance ( Mutuelle de santé) outside the school.' },
+                                { company: 'ASYV Student Government 2024-2025', dates: ' July 2023 – July 2024', title: 'Minister of Gender & Family Promotion', desc: ' Founded the Family Visitation, ASYV Talk, and Debate Competition programs about gender equality; spearheaded tech-savvy education; advocated for students in implementations of the school policies and programs; and held town hall meetings.' },
                             ].map((r) => (
                                 <li key={`${r.company}-${r.title}`} className="py-6 exp-row">
                                     <div className="flex items-start justify-between gap-6">
