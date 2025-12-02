@@ -5,7 +5,9 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Menu from './components/Menu.jsx'
+import Blog from './pages/Blog.jsx'
 import CursorFollower from './components/CursorFollower.jsx'
+import Contact from './pages/Contact.jsx'
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 

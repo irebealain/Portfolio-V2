@@ -10,6 +10,7 @@ import academicBridgeLogo from '../assets/logos/academic-bridge.png';
 import growthWaveLogo from '../assets/logos/growth-wave.png';
 import kudiBooksLogo from '../assets/logos/kudi-books.png';
 import alain from '../assets/alain.jpg'
+import FinalCv from '../assets/papers/Final CV.pdf'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -118,7 +119,7 @@ export default function Home() {
                     <p className="max-w-md mt-6 hero-copy subtle">
                         Alain Irebe Gashumba is a young Rwandan leader dedicated to technology, gender equality, and community growth. A graduate of Agahozo-Shalom Youth Village, he founded ByteBuilders, taught programming to over 30 students, and organized hackathons. As his community’s Minister of Gender and Family Promotion, he created a girls’ referee class to empower young women. With experience from Africlouds, GrowthWave, and Academic Bridge, Alain uses creativity and leadership to drive positive change.
                     </p>
-                    <a className="inline-flex px-6 py-3 mt-8 transition-transform rounded-full bg-accent text-accent-fore hover:scale-105" href="/alain-cv.pdf" target="_blank">View My Resume</a>
+                    <a className="inline-flex px-6 py-3 mt-8 transition-transform rounded-full bg-accent text-accent-fore hover:scale-105" href= {FinalCv} target="_blank">View My CV</a>
                 </div>
                 <div className="relative flex justify-center md:justify-end">
                     <div className="relative hero-portrait">
@@ -155,61 +156,6 @@ export default function Home() {
                     ))}
                 </div>
             </section>
-
-
-            {/* CTA */}
-            <section className="relative py-24 text-center reveal-up">
-                <div className="absolute inset-0 rounded-full bg-emerald-600/20 blur-3xl" />
-                <div className="relative">
-                    <h2 className="text-4xl heading-lg md:text-6xl font-display">LET'S BUILD SOMETHING AMAZING TOGETHER</h2>
-                    <p className="max-w-2xl mx-auto mt-4 subtle">Whether it's a web app, management system, or innovative solution, I'm ready to bring your vision to life.</p>
-                    <a className="inline-flex px-6 py-3 mt-8 transition-transform rounded-full bg-accent text-accent-fore hover:scale-105" href="#contact">Start a Project</a>
-                </div>
-            </section>
-
-            {/* Marquee + stacked photo */}
-            <section className="relative py-16 overflow-hidden">
-                <div className="text-6xl font-semibold whitespace-nowrap opacity-40 font-display text-white/30">
-                    <div className="inline-block animate-marquee-left will-change-transform">
-                        {Array.from({ length: 20 }).map((_, i) => (
-                            <span key={i} className="mx-6">{name} *</span>
-                        ))}
-                    </div>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="rotate-6">
-                        <img className="w-[420px] h-[520px] object-cover rounded shadow-2xl" src={alain} alt="Alain Gashumba" />
-                    </div>
-                </div>
-            </section>
-
-            {/* Skills + Resume and Stats */}
-            <section className="reveal-up">
-                <div className='w-full'>
-                    <p className="w-full subtle">
-                        From teaching coding at Byte Builders to developing enterprise systems at Growth Wave and Africlouds, I've built a diverse skill set. I'm passionate about creating technology that empowers communities and solves real challenges.
-                    </p>
-                    
-
-                    <div className="grid grid-cols-3 gap-8 mt-12">
-                        {[
-                            ['3', 'Years Experience'],
-                            ['6', 'Organizations Served'],
-                            ['10', 'Projects Completed']
-                        ].map(([num, label]) => (
-                            <div key={label}>
-                                <div className="text-5xl stat-number font-display text-accent" data-target={num}>{num}+</div>
-                                <div className="mt-2 text-sm subtle">{label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Testimonials */}
-            <div className="reveal-up">
-                <Testimonials />
-            </div>
 
             {/* Services */}
             <section className="space-y-6 reveal-up">
@@ -260,6 +206,58 @@ export default function Home() {
                         <p className="mt-2 subtle">{desc}</p>
                     </div>
                 ))}
+            </section>
+
+            {/* Skills + Resume and Stats */}
+            <section className="reveal-up">
+                <div className='w-full'>
+                    <p className="w-full subtle">
+                        From teaching coding at Byte Builders to developing enterprise systems at Growth Wave and Africlouds, I've built a diverse skill set. I'm passionate about creating technology that empowers communities and solves real challenges.
+                    </p>
+                    
+
+                    <div className="grid grid-cols-3 gap-8 mt-12">
+                        {[
+                            ['3', 'Years Experience'],
+                            ['6', 'Organizations Served'],
+                            ['10', 'Projects Completed']
+                        ].map(([num, label]) => (
+                            <div key={label}>
+                                <div className="text-5xl stat-number font-display text-accent" data-target={num}>{num}+</div>
+                                <div className="mt-2 text-sm subtle">{label}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials */}
+            <div className="reveal-up">
+                <Testimonials />
+            </div>
+             {/* CTA */}
+            <section className="relative py-24 text-center reveal-up">
+                <div className="absolute inset-0 rounded-full bg-emerald-600/20 blur-3xl" />
+                <div className="relative">
+                    <h2 className="text-4xl heading-lg md:text-6xl font-display">LET'S BUILD SOMETHING AMAZING TOGETHER</h2>
+                    <p className="max-w-2xl mx-auto mt-4 subtle">Whether it's a web app, management system, or innovative solution, I'm ready to bring your vision to life.</p>
+                    <a className="inline-flex px-6 py-3 mt-8 transition-transform rounded-full bg-accent text-accent-fore hover:scale-105" href="/contact">Start a Project</a>
+                </div>
+            </section>
+            {/* Marquee + stacked photo */}
+            <section className="relative py-16 overflow-hidden">
+                <div className="text-6xl font-semibold whitespace-nowrap opacity-40 font-display text-white/30">
+                    <div className="inline-block animate-marquee-left will-change-transform">
+                        {Array.from({ length: 20 }).map((_, i) => (
+                            <span key={i} className="mx-6">{name} *</span>
+                        ))}
+                    </div>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="rotate-6">
+                        <img className="w-[420px] h-[520px] object-cover rounded shadow-2xl" src={alain} alt="Alain Gashumba" />
+                    </div>
+                </div>
             </section>
         </div>
     )
