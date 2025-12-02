@@ -3,10 +3,10 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import portrait from '../assets/asyv-graduation.png'
 import boardChairVisitation from '../assets/pictures/board-chair-sg.JPG'
-import doneCalvin from '../assets/pictures/donecalvin_75.jpg'
+import doneCalvin from '../assets/pictures/donecalvin_75.JPG'
 import eyPitching from '../assets/pictures/EY-pitching.jpg'
-import Mentorship from '../assets/pictures/Mentorship_22.jpg'
-import SwearingIn from '../assets/pictures/swearing-in.jpg'
+import Mentorship from '../assets/pictures/Mentorship_22.JPG'
+import SwearingIn from '../assets/pictures/swearing-in.JPG'
 // import
 
 gsap.registerPlugin(ScrollTrigger)
