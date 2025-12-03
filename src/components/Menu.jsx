@@ -45,6 +45,7 @@ export default function Menu() {
                     <MenuItem to="/home" label="Home" onNavigate={() => setOpen(false)} />
                     <MenuItem to="/about" label="About" onNavigate={() => setOpen(false)} />
                     <MenuItem to="/projects" label="Project" onNavigate={() => setOpen(false)} />
+                    <MenuItem to="/gallery" label="Gallery" onNavigate={() => setOpen(false)} />
                     <MenuItem to="/blog" label="Blog" onNavigate={() => setOpen(false)} />
                     <MenuItem to="/contact" label="Contact" onNavigate={() => setOpen(false)} />
                 </div>

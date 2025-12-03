@@ -8,6 +8,7 @@ import Menu from './components/Menu.jsx'
 import Blog from './pages/Blog.jsx'
 import CursorFollower from './components/CursorFollower.jsx'
 import Contact from './pages/Contact.jsx'
+import Gallery from './pages/Gallery.jsx'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </main>
 

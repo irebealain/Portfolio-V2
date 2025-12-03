@@ -45,23 +45,19 @@ export default function Blog() {
     // Your research paper details - UPDATE THESE WITH YOUR ACTUAL PAPER INFO
     const researchPaper = {
         title: 'HOW HAS CORRUPTION IN KENYA INFLUENCED THE ECONOMY AND POLITICAL STABILITY IN KENYA OVER THE LAST 20 YEARS',
-        subtitle: 'A comprehensive study on [your research topic]',
+        subtitle: `A comprehensive study on the influence of corruption on Kenya's economy and political stability in the last 20 years.`,
         author: 'Alain Irebe Gashumba',
         date: 'August 2025',
         readTime: '15 min read',
         category: 'Research',
         tags: ['Corruption', 'Economy', 'Politics'],
-        abstract: `This research paper explores [brief description of your research]. 
-        
-        The study focuses on [main focus areas], presenting findings that demonstrate [key findings]. 
-        
-        Through comprehensive analysis and research methodology, this paper contributes to [contribution to the field].`,
+        abstract: `Kenya faces many challenges, but corruption has been especially damaging to its economic and political progress. Despite its rich resources and strong potential, corruption rooted in the colonial era has hindered development for decades. It continues to cost the country billions each year, diverting vital funds from essential services like healthcare and education and limiting national growth.`,
         
         keyFindings: [
-            'Key finding or contribution #1',
-            'Key finding or contribution #2',
-            'Key finding or contribution #3',
-            'Key finding or contribution #4'
+            'Corruption slows Kenya’s economic growth by wasting public resources.',
+            'It weakens political stability by reducing trust and fueling protests.',
+            'It increases unemployment and poverty through unfair hiring and stolen funds.',
+            'It harms public services, especially policing, health, and energy sectors. '
         ],
         
         pdfUrl: myPaper, // Update with your actual PDF path

@@ -11,7 +11,7 @@ import growthWaveLogo from '../assets/logos/growth-wave.png';
 import kudiBooksLogo from '../assets/logos/kudi-books.png';
 import alain from '../assets/alain.jpg'
 import FinalCv from '../assets/papers/Final CV.pdf'
-
+import introVid from '../assets/videos/intro.mp4'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
@@ -124,7 +124,8 @@ export default function Home() {
                 <div className="relative flex justify-center md:justify-end">
                     <div className="relative hero-portrait">
                         <div className="absolute rounded-full -inset-12 bg-emerald-500/20 blur-3xl"></div>
-                        <img className="relative z-10 w-[360px] h-[460px] object-cover rounded-2xl" src={alain} alt="Portrait" />
+                        {/* <img className="relative z-10 w-[360px] h-[460px] object-cover rounded-2xl" src={alain} alt="Portrait" /> */}
+                        <video src= {introVid} controls></video>
                     </div>
                 </div>
             </section>
