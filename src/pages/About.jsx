@@ -1,13 +1,34 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import portrait from '../assets/asyv-graduation.png'
-import boardChairVisitation from '../assets/pictures/board-chair-sg.JPG'
-import doneCalvin from '../assets/pictures/donecalvin_75.JPG'
-import eyPitching from '../assets/pictures/EY-pitching.jpg'
-import Mentorship from '../assets/pictures/Mentorship_22.JPG'
-import SwearingIn from '../assets/pictures/swearing-in.JPG'
-// import
+import img1 from '../assets/gallery/DSC07233.JPG';
+import img2 from '../assets/gallery/donecalvin_76.JPG';
+import img3 from '../assets/gallery/DSC01964.jpg';
+import img4 from '../assets/gallery/ASYVGraduation-202518052516th-May-2025_156.JPG';
+import img5 from '../assets/gallery/DSC00207.JPG';
+import img6 from '../assets/gallery/DSC00197.JPG';
+import img7 from '../assets/gallery/DSC08606.jpg';
+import img8 from '../assets/gallery/Mentorship_22.JPG';
+import img9 from '../assets/gallery/10.jpg';
+import img10 from '../assets/gallery/_DSC5084 - Copy.jpg';
+import certAstronomy from '../assets/certificates/International Astronomy and Astrophysics Certificate.png';
+import certPioneer from '../assets/certificates/certificate_for_Pioneer_2nd Summit.png';
+import certAlain from '../assets/certificates/Alain - Certificate.png';
+import certGGC from '../assets/certificates/GGC Online Class Certificates Spring 2024 Alain.png';
+import certWriting from '../assets/certificates/Cr R&WR-2-Cert (1)-part-2.png';
+import certGeneric1 from '../assets/certificates/certificate_6761101696098439.png';
+import certUdacity from '../assets/certificates/Learn the Latest Tech Skills_ Advance Your Career _ Udacity.png';
+import certGeneric2 from '../assets/certificates/certificate_6767761696095279.png';
+import certIXL1 from '../assets/certificates/IXL.png';
+import certPioneer2 from '../assets/certificates/certificate_for_Pioneer_2nd Summit(1).png';
+import certGeneric3 from '../assets/certificates/certificate.png';
+import certGeneric4 from '../assets/certificates/certificate_6768321696097116.png';
+import certTimeManagement from '../assets/certificates/Time Management-1-Cert-part-5.png';
+import certIXL2 from '../assets/certificates/IXL2.png';
+import certPublicSpeaking from '../assets/certificates/Public Speaking-6-Cert-part-9.png';
+import certClimate from '../assets/certificates/certificate climate science.png';
+import certAlain2 from '../assets/certificates/Alain IREBE GASHUMBA.png';
+import certGashumba from '../assets/certificates/Gashumba Alain.png';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -155,18 +176,128 @@ export default function About() {
 
     // Placeholder images - replace these with your actual image imports
     const photos = [
-        portrait, // Replace with your actual images
-        boardChairVisitation,
-        doneCalvin,
-        eyPitching,
-        SwearingIn,
-        Mentorship,
-        portrait,
-        portrait,
-        portrait,
-        portrait,
+        img1, // Replace with your actual images
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7,
+        img8,
+        img9,
+        img10,
     ]
-
+    // Arrary for the certificates
+    const certificates = [
+    {
+        title: "International Astronomy & Astrophysics Certification",
+        description: "Awarded for completing an advanced astronomy and astrophysics program.",
+        year: "2024",
+        img: certAstronomy
+    },
+    {
+        title: "Pioneer Research Program Participation",
+        description: "Recognized for contributing to the Pioneer Research Summit.",
+        year: "2024",
+        img: certPioneer
+    },
+    {
+        title: "Achievement Certificate – Alain",
+        description: "General certificate awarded for academic or extracurricular excellence.",
+        year: "2023",
+        img: certAlain
+    },
+    {
+        title: "GGC Spring 2024 Class Certificate",
+        description: "Completed GGC Online Learning Program for Spring 2024.",
+        year: "2024",
+        img: certGGC
+    },
+    {
+        title: "Creative Reading & Writing Certificate",
+        description: "Awarded for excellence in reading, writing, and creative expression.",
+        year: "2023",
+        img: certWriting
+    },
+    {
+        title: "Certificate of Completion",
+        description: "Successfully completed a learning module or skill program.",
+        year: "2023",
+        img: certGeneric1
+    },
+    {
+        title: "Udacity Tech Skills Certificate",
+        description: "Awarded for completing a Udacity course focused on modern technology skills.",
+        year: "2024",
+        img: certUdacity
+    },
+    {
+        title: "Professional Development Certificate",
+        description: "Recognition for completing a specialized training curriculum.",
+        year: "2023",
+        img: certGeneric2
+    },
+    {
+        title: "IXL Skills Mastery Certificate",
+        description: "Awarded for achieving high proficiency in IXL learning modules.",
+        year: "2022",
+        img: certIXL1
+    },
+    {
+        title: "Pioneer Summit Certificate",
+        description: "Recognized for participation and contribution to the Pioneer Summit.",
+        year: "2024",
+        img: certPioneer2
+    },
+    {
+        title: "General Certificate",
+        description: "Acknowledgment of completion or recognition for training performance.",
+        year: "2023",
+        img: certGeneric3
+    },
+    {
+        title: "Certificate of Achievement",
+        description: "Recognized for outstanding progress in an academic or skill-based program.",
+        year: "2023",
+        img: certGeneric4
+    },
+    {
+        title: "Time Management Course Certificate",
+        description: "Completed a structured course on effective time management.",
+        year: "2023",
+        img: certTimeManagement
+    },
+    {
+        title: "IXL Excellence Certificate",
+        description: "Awarded for high performance across multiple IXL categories.",
+        year: "2022",
+        img: certIXL2
+    },
+    {
+        title: "Public Speaking Certificate",
+        description: "Awarded for completing a public speaking and communication mastery program.",
+        year: "2024",
+        img: certPublicSpeaking
+    },
+    {
+        title: "Climate Science Certification",
+        description: "Completed a climate science educational program focused on environmental awareness.",
+        year: "2024",
+        img: certClimate
+    },
+    {
+        title: "Certificate of Recognition – Alain",
+        description: "General recognition for academic or community achievements.",
+        year: "2023",
+        img: certAlain2
+    },
+    {
+        title: "Gashumba Alain Certificate",
+        description: "Official certificate awarded for successful program completion.",
+        year: "2022",
+        img: certGashumba
+    }
+    ];
     return (
         <div ref={rootRef} className="space-y-16">
             {/* Hero block matching reference */}
@@ -205,7 +336,7 @@ export default function About() {
                                 }}
                             >
                                 <img
-                                    className="object-fit w-full h-full shadow-2xl rounded-2xl"
+                                    className="object-cover w-full h-full shadow-2xl rounded-2xl"
                                     src={photo}
                                     alt={`Photo ${index + 1}`}
                                 />
@@ -273,52 +404,31 @@ export default function About() {
 
             {/* Awards */}
             <section className="pt-10 space-y-6">
-                <div className="text-accent">// Awards & Recognition</div>
-                <h2 className="heading-lg md:text-6xl">Honors & Achievements</h2>
-                <div className="relative awards-wrap">
-                    {[
-                        {
-                            title: 'ASYV STEM Day 2024 Winner',
-                            desc: 'Automobile cane directing blinds project selected by 20+ teachers and 100+ students as Best 2024 STEAM Project Exhibition',
-                            year: '2024',
-                            img: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=64&h=64&auto=format&fit=crop'
-                        },
-                        {
-                            title: 'Provincial Wavumbuzi Entrepreneurial Challenge',
-                            desc: 'Presented sustainable solutions to poverty, ranked 2nd runner-up among provincial competitors in Rwanda',
-                            year: '2023',
-                            img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=64&h=64&auto=format&fit=crop'
-                        },
-                        {
-                            title: 'Immense Scholarship Award',
-                            desc: 'Selected as finalist in Immense Essay Competition (UK) and awarded scholarship of 200 euros',
-                            year: '2022',
-                            img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=64&h=64&auto=format&fit=crop'
-                        },
-                        {
-                            title: 'Agahozo-Shalom Youth Village Scholarship',
-                            desc: 'Awarded four-year full scholarship to Liquidnet Family High School at ASYV, graduated with 3.74 GPA',
-                            year: '2021',
-                            img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=64&h=64&auto=format&fit=crop'
-                        },
-                    ].map((a, i) => (
-                        <div
-                            key={a.title}
-                            className="sticky p-6 mb-4 award-card card"
-                            style={{ top: `${80 + i * 24}px`, zIndex: 10 - i }}
-                        >
-                            <div className="grid grid-cols-[64px_1fr_auto] items-center gap-6">
-                                <img className="object-cover w-16 h-16 rounded" src={a.img} alt={a.title} />
-                                <div>
-                                    <div className="text-xl font-display md:text-2xl">{a.title}</div>
-                                    <p className="mt-1 text-sm subtle md:text-base">{a.desc}</p>
-                                </div>
-                                <div className="text-sm text-accent">{a.year}</div>
-                            </div>
+                <div className="text-accent">// Certificates & Recognition</div>
+                <h2 className="heading-lg md:text-6xl">Professional Certifications</h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+                    {certificates.map((cert, i) => (
+                    <div 
+                        key={i} 
+                        className="rounded-xl overflow-hidden shadow-lg bg-card border border-white/10 hover:shadow-xl transition"
+                    >
+                        <img 
+                        src={cert.img} 
+                        alt={cert.title} 
+                        className="w-full h-56 object-cover"
+                        />
+
+                        <div className="p-4">
+                        <h3 className="font-display text-xl">{cert.title}</h3>
+                        <p className="text-sm subtle mt-1">{cert.description}</p>
+                        <div className="text-xs text-accent mt-2">{cert.year}</div>
                         </div>
+                    </div>
                     ))}
                 </div>
             </section>
+
 
             {/* Technologies (redesigned) */}
             <section className="space-y-6">

@@ -2,6 +2,16 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { X, Play, Calendar, MapPin, ChevronLeft, ChevronRight, Check } from 'lucide-react'
+import img1 from '../assets/gallery/DSC07233.JPG';
+import img2 from '../assets/gallery/donecalvin_76.JPG';
+import img3 from '../assets/gallery/DSC01964.jpg';
+import img4 from '../assets/gallery/ASYVGraduation-202518052516th-May-2025_156.JPG';
+import img5 from '../assets/gallery/DSC00207.JPG';
+import img6 from '../assets/gallery/DSC00197.JPG';
+import img7 from '../assets/gallery/DSC08606.jpg';
+import img8 from '../assets/gallery/Mentorship_22.JPG';
+import img9 from '../assets/gallery/10.jpg';
+import img10 from '../assets/gallery/_DSC5084 - Copy.jpg';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -28,103 +38,128 @@ export default function Gallery() {
 
     // EASY TO UPDATE: Just add new items to this array!
     const galleryItems = [
-        {
-            id: 1,
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop',
-            thumbnail: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400&auto=format&fit=crop',
-            title: 'ASYV Graduation Day 2025',
-            description: 'Celebrating the completion of my high school journey at Agahozo-Shalom Youth Village.',
-            category: 'Education',
-            date: 'Thu 15 May',
-            location: 'Rwamagana, Rwanda',
-            aspectRatio: 'landscape' // landscape, portrait, square
-        },
-        {
-            id: 2,
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop',
-            thumbnail: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=400&auto=format&fit=crop',
-            title: 'ASYV Hackathon 2024',
-            description: 'Organizing the first-ever ASYV Hackathon with Byte Builders.',
-            category: 'Tech Events',
-            date: 'Thu 15 May',
-            location: 'ASYV, Rwanda',
-            aspectRatio: 'landscape'
-        },
-        {
-            id: 3,
-            type: 'video',
-            url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-            thumbnail: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=400&auto=format&fit=crop',
-            title: 'Career Connect Hub Launch',
-            description: 'Launch event connecting students with mentors.',
-            category: 'Projects',
-            date: 'Thu 15 May',
-            location: 'Kigali, Rwanda',
-            aspectRatio: 'landscape'
-        },
-        {
-            id: 4,
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop',
-            thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop',
-            title: 'Team Building at Growth Wave',
-            description: 'Working with the amazing team at Growth Wave.',
-            category: 'Work',
-            date: 'Thu 15 May',
-            location: 'Kigali, Rwanda',
-            aspectRatio: 'portrait'
-        },
-        {
-            id: 5,
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop',
-            thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=400&auto=format&fit=crop',
-            title: 'Entrepreneurship Challenge',
-            description: 'Ranked 2nd runner-up in provincial competition.',
-            category: 'Awards',
-            date: 'Thu 15 May',
-            location: 'Rwanda',
-            aspectRatio: 'landscape'
-        },
-        {
-            id: 6,
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=1200&auto=format&fit=crop',
-            thumbnail: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=400&auto=format&fit=crop',
-            title: 'STEM Day 2024 Winner',
-            description: 'Winning Best STEAM Project with automobile cane.',
-            category: 'Awards',
-            date: 'Thu 15 May',
-            location: 'ASYV',
-            aspectRatio: 'square'
-        },
-        {
-            id: 7,
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop',
-            thumbnail: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=400&auto=format&fit=crop',
-            title: 'Coding Workshop',
-            description: 'Teaching HTML, CSS, and JavaScript at Byte Builders.',
-            category: 'Tech Events',
-            date: 'Thu 15 May',
-            location: 'ASYV',
-            aspectRatio: 'landscape'
-        },
-        {
-            id: 8,
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=1200&auto=format&fit=crop',
-            thumbnail: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=400&auto=format&fit=crop',
-            title: 'Weekend in Kigali',
-            description: 'Exploring the beautiful city with friends.',
-            category: 'Personal',
-            date: 'Thu 15 May',
-            location: 'Kigali',
-            aspectRatio: 'portrait'
-        }
-    ]
+    {
+        id: 1,
+        type: 'image',
+        url: img1,
+        thumbnail: img1,
+        title: 'Event Moment – DSC07233',
+        description: 'A captured moment from an event, featuring participants in a lively environment.',
+        category: 'Events',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'landscape'
+    },
+    {
+        id: 2,
+        type: 'image',
+        url: img2,
+        thumbnail: img2,
+        title: 'Portrait Session – donecalvin_76',
+        description: 'A portrait-style photograph capturing a personal moment with natural expression.',
+        category: 'Personal',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'portrait'
+    },
+    {
+        id: 3,
+        type: 'image',
+        url: img3,
+        thumbnail: img3,
+        title: 'Outdoor Gathering – DSC01964',
+        description: 'A candid scene from an outdoor gathering, highlighting a relaxed atmosphere.',
+        category: 'Events',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'landscape'
+    },
+    {
+        id: 4,
+        type: 'image',
+        url: img4,
+        thumbnail: img4,
+        title: 'ASYV Graduation 2025',
+        description: 'A moment from the ASYV 2025 graduation ceremony, commemorating an important milestone.',
+        category: 'Education',
+        date: '15 May 2025',
+        location: 'ASYV, Rwanda',
+        aspectRatio: 'landscape'
+    },
+    {
+        id: 5,
+        type: 'image',
+        url: img5,
+        thumbnail: img5,
+        title: 'Group Activity – DSC00207',
+        description: 'A group captured during an activity, showing teamwork and interaction.',
+        category: 'Community',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'landscape'
+    },
+    {
+        id: 6,
+        type: 'image',
+        url: img6,
+        thumbnail: img6,
+        title: 'Event Highlight – DSC00197',
+        description: 'A vivid moment from an organized event full of engagement and participation.',
+        category: 'Events',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'landscape'
+    },
+    {
+        id: 7,
+        type: 'image',
+        url: img7,
+        thumbnail: img7,
+        title: 'Activity Snapshot – DSC08606',
+        description: 'A snapshot from an indoor or outdoor activity, capturing interaction and movement.',
+        category: 'Community',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'landscape'
+    },
+    {
+        id: 8,
+        type: 'image',
+        url: img8,
+        thumbnail: img8,
+        title: 'Mentorship Session',
+        description: 'A mentorship or leadership-building moment, highlighting collaboration.',
+        category: 'Education',
+        date: '2025',
+        location: 'ASYV, Rwanda',
+        aspectRatio: 'portrait'
+    },
+    {
+        id: 9,
+        type: 'image',
+        url: img9,
+        thumbnail: img9,
+        title: 'Event Photo – 10',
+        description: 'A general event photograph capturing atmosphere and participation.',
+        category: 'Events',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'landscape'
+    },
+    {
+        id: 10,
+        type: 'image',
+        url: img10,
+        thumbnail: img10,
+        title: 'Outdoor Scene – DSC5084',
+        description: 'An outdoor environmental shot featuring people and surroundings.',
+        category: 'Community',
+        date: '2025',
+        location: 'Rwanda',
+        aspectRatio: 'landscape'
+    }
+    ];
+
 
     const categories = ['all', ...new Set(galleryItems.map(item => item.category))]
     const filteredItems = selectedCategory === 'all' 
