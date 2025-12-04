@@ -9,7 +9,7 @@ const projects = [
   { title: 'Omnifood', desc: 'A modern website food suggesting website built for health purposes', tags: ['HTML5','CSS3'], videoId: 'GsCMvjqXGlQ' },
   { title: 'ASYV Election System', desc: 'Modern ', tags: ['HTML5','Tailwind CSS','React'], videoId: 'wmeuwbAaH9w' },
   { title: 'Jumping Shell in Py3', desc: 'Sleek architecture template...', tags: ['HTML5','CSS','GSAP'], videoId: 'zGvHMHVRVZ8' },
-  { title: 'Career Connect Hub', desc: 'Conversion-focused portfolio template...', tags: ['HTML5','GSAP','Vite'], videoId: 'e-ukJAwb48gJo' },
+  { title: 'Career Connect Hub', desc: 'Conversion-focused portfolio template...', tags: ['HTML5','GSAP','Vite'], videoId: 'ukJAwb48gJo' },
   { title: 'Moody IO', desc: 'Consultant website template...', tags: ['HTML5','Tailwind CSS','Alpine.js'], videoId: 'dVD2CbG_-oM' },
 ]
 
