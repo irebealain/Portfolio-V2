@@ -277,7 +277,7 @@ export default function Home() {
                         { year: '2021', title: 'Started at ASYV', desc: 'Began formal technology education and programming fundamentals' },
                         { year: '2023', title: 'Founded Byte Builders', desc: 'Established peer-to-peer coding education program' },
                         { year: '2024', title: 'Won STEM Competition', desc: 'Developed innovative assistive technology for accessibility' },
-                        { year: '2025', title: 'Leading Tech Initiatives', desc: 'Graduated and now leading Career Connect Hub development' }
+                        { year: '2025', title: 'Internship', desc: 'Graduated and now interning at The Agahozo-Shalom Youth Village' }
                     ].map((step, i) => (
                         <div key={i} className="relative journey-step">
                             <div className="absolute -left-[37px] w-6 h-6 rounded-full bg-accent flex items-center justify-center">

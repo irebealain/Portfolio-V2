@@ -7,11 +7,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 const projects = [
   { title: 'Omnifood', desc: 'A modern website food suggesting website built for health purposes', tags: ['HTML5','CSS3'], videoId: 'GsCMvjqXGlQ' },
-  { title: 'Lumin Studio', desc: 'Modern ', tags: ['HTML5','Tailwind CSS','React'], videoId: 'wmeuwbAaH9w' },
-  { title: 'Nubuilt', desc: 'Sleek architecture template...', tags: ['HTML5','CSS','GSAP'], videoId: 'ScMzIvxBSi4' },
-  { title: 'Design Orbit', desc: 'Conversion-focused portfolio template...', tags: ['HTML5','GSAP','Vite'], videoId: 'e-ORhEE9VVg' },
-  { title: 'Formation Time', desc: 'Consultant website template...', tags: ['HTML5','Tailwind CSS','Alpine.js'], videoId: 'hT_nvWreIhg' },
-  { title: 'LaundryBee', desc: 'Modern website template for laundry services', tags: ['Tailwind CSS','Alpine.js','Formspree'], videoId: '60ItHLz5WEA' }
+  { title: 'ASYV Election System', desc: 'Modern ', tags: ['HTML5','Tailwind CSS','React'], videoId: 'wmeuwbAaH9w' },
+  { title: 'Jumping Shell in Py3', desc: 'Sleek architecture template...', tags: ['HTML5','CSS','GSAP'], videoId: 'zGvHMHVRVZ8' },
+  { title: 'Career Connect Hub', desc: 'Conversion-focused portfolio template...', tags: ['HTML5','GSAP','Vite'], videoId: 'e-ukJAwb48gJo' },
+  { title: 'Moody IO', desc: 'Consultant website template...', tags: ['HTML5','Tailwind CSS','Alpine.js'], videoId: 'dVD2CbG_-oM' },
 ]
 
 export default function ProjectsVideosCentered() {
